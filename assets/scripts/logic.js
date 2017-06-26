@@ -12,13 +12,12 @@ initialize();
  * @param {KeyboardEvent} e
  */
 document.onkeydown = function (e) {
-    var letterChecker = new RegExp("[A-Z]");
     var userInput = e.key.toUpperCase();
 
     //if the user input isnt a letter or 
-    if (!letterChecker.exec(userInput) ||
+    if (e.keyCode > 90 || e.keyCode < 65 ||
         gameObject.guessedCharacters.includes(userInput) && gameObject.guessesLeft != 0) {
-        alert("Please enter a letter or a letter you haven't already tried");
+        alert("Please enter a letter or a letter you haven't already used");
         return;
     }
 
