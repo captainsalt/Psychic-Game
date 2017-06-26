@@ -78,7 +78,7 @@ function updateAllElements() {
  * @param {string} elementValue 
  */
 function updateHtmlElement(elementId, elementValue) {
-    var element = $("#" + elementId);
-    element.prop("innerText", elementValue);
+    var element = document.getElementById(elementId);
+    element.innerHTML = elementValue;
 }
 
